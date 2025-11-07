@@ -2,14 +2,13 @@
 
 # OKD INSTALLATION DOCUMENTATION
 
-This document to guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0)
+This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0)
 
 
 ## 📚 Table of Content
 - [Requirement for installation](#requirement-for-installation)
 - [Node Specification and Topology ](#node-specification-and-topology)
 - [Installation](#installation)
-
 
 
 ## Requirement for installation
@@ -95,3 +94,21 @@ They store persistent data used by applications, containers, and internal OKD se
 | 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed storage, persistent volumes) |
 
 ![Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png)
+
+# Installation
+In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
+
+1. [**DHCP Setup** ](#dhcp-setup) 
+   Configure dynamic IP address allocation and network boot.
+
+2. [**DNS & NTP Configuration**](#dns-&-ntp-configuration) 
+   Set up name resolution and time synchronization for all cluster nodes.
+
+3. [**Ignition File Generation**](#ignition-file-generation)
+   Create ignition files for the bootstrap, master, and worker nodes ojn bastion server
+
+4. [**Bootstrap Installation**](#bootstrap-installation) 
+   Initialize the control plane and start the cluster installation process.
+
+5. [**Master Worker & Storage Node Joining**](#master-worker-&-storage-node-joining) 
+   Join remaining nodes to complete the OKD cluster setup.
