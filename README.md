@@ -64,3 +64,9 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 ### LoadBalancer (Haproxy)
 HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
 It ensures high availability, failover, and reliable access to services like api.midagri.gob.pe, api-int.midagri.gob.pe, and *.apps.midagri.gob.pe.
+
+### NTP Server 
+Deploy an NTP (Network Time Protocol) server and configure all nodes — Bastion, Bootstrap, Master, and Worker — to synchronize time. Accurate time synchronization prevents TLS and authentication issues during the installation, the NTP server source depends on your region. Makesure the ntp server running well and sync with your region, because the Control Plane IP will be assigned via DHCP. If your DHCP server does not provide time information, the control plane bootstrap process may fail.
+
+### DHCP Server
+Configure a DHCP server to automatically assign IP addresses and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
