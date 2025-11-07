@@ -60,3 +60,7 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 - **Isolates the network** — only the bastion can SSH into cluster nodes.
 
 ![Bastion](https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png)
+
+### LoadBalancer (Haproxy)
+HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
+It ensures high availability, failover, and reliable access to services like api.midagri.gob.pe, api-int.midagri.gob.pe, and *.apps.midagri.gob.pe.
