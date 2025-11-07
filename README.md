@@ -6,8 +6,8 @@ This document to guide step by step to install OKD version 4 specify [4.17.0-okd
 
 
 ## 📚 Table of Content
-- [Requirement for installation](#requirement)
-- [Node Specification and Topology ](#topology)
+- [Requirement for installation](#requirement-for-installation)
+- [Node Specification and Topology ](#node-specification-and-topology)
 - [Instalasi](#instalasi)
 - [Konfigurasi](#konfigurasi)
 - [Menjalankan Aplikasi](#menjalankan-aplikasi)
