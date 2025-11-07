@@ -70,7 +70,7 @@ It ensures high availability, failover, and reliable access to services like api
 Deploy an NTP (Network Time Protocol) server and configure all nodes — Bastion, Bootstrap, Master, and Worker — to synchronize time. Accurate time synchronization prevents TLS and authentication issues during the installation, the NTP server source depends on your region. Makesure the ntp server running well and sync with your region, because the Control Plane IP will be assigned via DHCP. If your DHCP server does not provide time information, the control plane bootstrap process may fail.
 
 ### DHCP Server
-Configure a DHCP server to automatically assign IP addresses and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
+Configure a DHCP server to automatically assign Fix IP addresses with NIC and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
 
 ### Node Bootstrap Server (Temporary)
 The Bootstrap node in OKD is a temporary node used during cluster installation.
