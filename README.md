@@ -59,22 +59,4 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 - **Stores important configuration files** such as `kubeconfig` and `install-config.yaml`.  
 - **Isolates the network** — only the bastion can SSH into cluster nodes.
 
-+-------------------+
-| Admin Laptop |
-| (SSH / VPN Access)|
-+---------+---------+
-|
-v
-+-------------------+
-| Bastion Server |
-| (oc, |
-| kubeconfig, ssh) |
-+---------+---------+
-|
-
-| | |
-v v v
-+------+ +------+ +------+
-|Master| |Worker1| |Worker2|
-+------+ +------+ +------+
 
