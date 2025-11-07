@@ -7,7 +7,7 @@ This document to guide step by step to install OKD version 4 specify [4.17.0-okd
 
 ## 📚 Table of Content
 - [Requirement for installation](#Requirement)
-- [Topology and Node Specification](#struktur-proyek)
+- [Node Specification and Topology ](#Topology)
 - [Instalasi](#instalasi)
 - [Konfigurasi](#konfigurasi)
 - [Menjalankan Aplikasi](#menjalankan-aplikasi)
@@ -88,7 +88,7 @@ They host pods, containers, and services deployed by users.
 The Storage nodes form a Ceph cluster that provides distributed and highly available storage for the OKD environment.
 They store persistent data used by applications, containers, and internal OKD services.
 
-# Topology Nad Node Specification
+# Node Specification and Topology
 ## 🧱 OKD 4.17 Cluster Node Specification
 
 | **Component**          | **Hostname / IP**         | **Operating System**                       | **CPU / RAM / Disk**            | **Main Services / Roles** |
