@@ -7,7 +7,7 @@ This document to guide step by step to install OKD version 4 specify [4.17.0-okd
 
 ## 📚 Table of Content
 - [Requirement for installation](#Requirement)
-- [Topology](#struktur-proyek)
+- [Topology and Node Specification](#struktur-proyek)
 - [Instalasi](#instalasi)
 - [Konfigurasi](#konfigurasi)
 - [Menjalankan Aplikasi](#menjalankan-aplikasi)
@@ -87,3 +87,17 @@ They host pods, containers, and services deployed by users.
 ### Storage Node
 The Storage nodes form a Ceph cluster that provides distributed and highly available storage for the OKD environment.
 They store persistent data used by applications, containers, and internal OKD services.
+
+# Topology Nad Node Specification
+## 🧱 OKD 4.17 Cluster Node Specification
+
+| **Component**          | **Hostname / IP**         | **Operating System**                       | **CPU / RAM / Disk**            | **Main Services / Roles** |
+|--------------------------|---------------------------|--------------------------------------------|----------------------------------|----------------------------|
+| 🧩 **Bastion Server**    | `10.200.106.40`           | Rocky Linux 8.9 (Green Obsidian)           | 8 cores / 8 GB / 120 GB (sda)       | - openshift-installer<br>- NTP Server<br>- DNS Server<br>- Web Server (HTTP)<br>- OC & Kubectl Client<br>- Jump Host |
+| ⚙️ **Load Balancer**     | `10.200.106.42`           | Ubuntu 24.04.3 LTS (Noble)                 | 8 cores / 16 GB / 120 GB (sda)        | - HAProxy<br> :6443 → API Server (masters)<br> :22623 → Machine Config Server<br> :80 / :443 → Ingress Routers<br>- DHCP Server |
+| 🚀 **Bootstrap Server**  | `10.200.106.41`           | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB (sda)         | - Bootstrap Ignition<br>- Temporary Control Plane<br>- OC & Kubectl Client |
+| 🧭 **Master Nodes**      | `10.200.106.34–36`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB each (sda)    | - Control Plane (etcd, API, scheduler, controller) |
+| 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 32 cores / 32 GB / 120 GB each (sda)    | - Compute / Application Workloads |
+| 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sda)    | - Ceph Cluster (distributed storage, persistent volumes) |
+
+![Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png)
