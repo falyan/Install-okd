@@ -34,21 +34,21 @@ This installation need requirement below.
 
 | Hostname                  | IP Address      | Keterangan            |
 |----------------------------|-----------------|------------------------|
-| haproxy.okd.rnd.local      | 10.200.106.42   | HAProxy / Load Balancer |
-| api.okd.rnd.local          | 10.200.106.42   | API endpoint eksternal |
-| api-int.okd.rnd.local      | 10.200.106.42   | API internal cluster |
-| *.apps.okd.rnd.local       | 10.200.106.42   | Wildcard route aplikasi |
-| bootstrap.okd.rnd.local    | 10.200.106.41   | Node bootstrap sementara |
-| bastion.okd.rnd.local      | 10.200.106.40   | Bastion / jumphost |
-| master1.okd.rnd.local      | 10.200.106.34   | Control Plane node 1 |
-| master2.okd.rnd.local      | 10.200.106.35   | Control Plane node 2 |
-| master3.okd.rnd.local      | 10.200.106.36   | Control Plane node 3 |
-| worker1.okd.rnd.local      | 10.200.106.37   | Worker node 1 |
-| worker2.okd.rnd.local      | 10.200.106.38   | Worker node 2 |
-| worker3.okd.rnd.local      | 10.200.106.39   | Worker node 3 |
-| worker4.okd.rnd.local      | 10.200.106.43   | Worker node 4 |
-| worker5.okd.rnd.local      | 10.200.106.44   | Worker node 5 |
-| worker6.okd.rnd.local      | 10.200.106.45   | Worker node 6 |
+| haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
+| api.midagri.gob.pe          | 10.200.106.42   | API endpoint eksternal |
+| api-int.midagri.gob.pe      | 10.200.106.42   | API internal cluster |
+| *.apps.midagri.gob.pe       | 10.200.106.42   | Wildcard route aplikasi |
+| bootstrap.midagri.gob.pe    | 10.200.106.41   | Node bootstrap sementara |
+| bastion.midagri.gob.pe      | 10.200.106.40   | Bastion / jumphost |
+| master1.midagri.gob.pe      | 10.200.106.34   | Control Plane node 1 |
+| master2.midagri.gob.pe      | 10.200.106.35   | Control Plane node 2 |
+| master3.midagri.gob.pe      | 10.200.106.36   | Control Plane node 3 |
+| worker1.midagri.gob.pe      | 10.200.106.37   | Worker node 1 |
+| worker2.midagri.gob.pe      | 10.200.106.38   | Worker node 2 |
+| worker3.midagri.gob.pe      | 10.200.106.39   | Worker node 3 |
+| worker4.midagri.gob.pe      | 10.200.106.43   | Storage 1 |
+| worker5.midagri.gob.pe      | 10.200.106.44   | Storage 2 |
+| worker6.midagri.gob.pe      | 10.200.106.45   | Storage 3 |
 
 
 
