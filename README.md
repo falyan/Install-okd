@@ -32,7 +32,7 @@ This installation need requirement below.
 
 ### Resolver Record DNS
 
-Konfigurasikan server DNS untuk menyediakan resolusi nama bagi semua komponen klaster seperti api.midagri.gob.pe, api-int.midagri.gob.pe, dan nama host node. Konfigurasi DNS yang tepat memastikan bahwa layanan dapat diselesaikan dengan benar di dalam klaster.
+Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
 | Hostname                  | IP Address      | Describtion           |
 |----------------------------|-----------------|------------------------|
@@ -57,7 +57,24 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 - **Secure gateway** for accessing all cluster nodes (master, worker).  
 - **Central point for installation and administration** (`oc`, `kubectl`).  
 - **Stores important configuration files** such as `kubeconfig` and `install-config.yaml`.  
-- **Isolates the network** — only the bastion can SSH into cluster nodes.  
-- **Can act as a proxy** for internal nodes to access the internet.
+- **Isolates the network** — only the bastion can SSH into cluster nodes.
 
++-------------------+
+| Admin Laptop |
+| (SSH / VPN Access)|
++---------+---------+
+|
+v
++-------------------+
+| Bastion Server |
+| (oc, |
+| kubeconfig, ssh) |
++---------+---------+
+|
+
+| | |
+v v v
++------+ +------+ +------+
+|Master| |Worker1| |Worker2|
++------+ +------+ +------+
 
