@@ -32,6 +32,8 @@ This installation need requirement below.
 
 ### Resolver Record DNS
 
+Konfigurasikan server DNS untuk menyediakan resolusi nama bagi semua komponen klaster seperti api.midagri.gob.pe, api-int.midagri.gob.pe, dan nama host node. Konfigurasi DNS yang tepat memastikan bahwa layanan dapat diselesaikan dengan benar di dalam klaster.
+
 | Hostname                  | IP Address      | Describtion           |
 |----------------------------|-----------------|------------------------|
 | haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
@@ -50,5 +52,12 @@ This installation need requirement below.
 | worker5.midagri.gob.pe      | 10.200.106.44   | Storage 2 |
 | worker6.midagri.gob.pe      | 10.200.106.45   | Storage 3 |
 
+### Bastion Server (Jumphost)
+In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
+- **Secure gateway** for accessing all cluster nodes (master, worker).  
+- **Central point for installation and administration** (`oc`, `kubectl`, `ansible`).  
+- **Stores important configuration files** such as `kubeconfig` and `install-config.yaml`.  
+- **Isolates the network** — only the bastion can SSH into cluster nodes.  
+- **Can act as a proxy** for internal nodes to access the internet.
 
 
