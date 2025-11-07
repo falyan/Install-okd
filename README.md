@@ -55,7 +55,7 @@ Konfigurasikan server DNS untuk menyediakan resolusi nama bagi semua komponen kl
 ### Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
 - **Secure gateway** for accessing all cluster nodes (master, worker).  
-- **Central point for installation and administration** (`oc`, `kubectl`, `ansible`).  
+- **Central point for installation and administration** (`oc`, `kubectl`).  
 - **Stores important configuration files** such as `kubeconfig` and `install-config.yaml`.  
 - **Isolates the network** — only the bastion can SSH into cluster nodes.  
 - **Can act as a proxy** for internal nodes to access the internet.
