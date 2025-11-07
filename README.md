@@ -28,7 +28,8 @@ This installation need requirement below.
 - DHCP server
 - 1 Node Bootstrap Server (Temporary)
 - 3 Node Master (Control Plane)
-- 6 Node Worker (Worker)
+- 3 Worker Node
+- 3 Storage Node
 
 ### Resolver Record DNS
 
@@ -48,9 +49,9 @@ Configure the DNS server to provide name resolution for all cluster components, 
 | worker1.midagri.gob.pe      | 10.200.106.37   | Worker node 1 |
 | worker2.midagri.gob.pe      | 10.200.106.38   | Worker node 2 |
 | worker3.midagri.gob.pe      | 10.200.106.39   | Worker node 3 |
-| worker4.midagri.gob.pe      | 10.200.106.43   | Storage 1 |
-| worker5.midagri.gob.pe      | 10.200.106.44   | Storage 2 |
-| worker6.midagri.gob.pe      | 10.200.106.45   | Storage 3 |
+| storage1.midagri.gob.pe      | 10.200.106.43   | Storage 1 |
+| storage2.midagri.gob.pe      | 10.200.106.44   | Storage 2 |
+| storage3.midagri.gob.pe      | 10.200.106.45   | Storage 3 |
 
 ### Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
@@ -70,3 +71,19 @@ Deploy an NTP (Network Time Protocol) server and configure all nodes — Bastion
 
 ### DHCP Server
 Configure a DHCP server to automatically assign IP addresses and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
+
+### Node Bootstrap Server (Temporary)
+The Bootstrap node in OKD is a temporary node used during cluster installation.
+It initializes the control plane, deploys the first master components, and then becomes unnecessary after the cluster is fully up and running.
+
+### Master Node (Control Plane)
+The Master nodes (Control Plane) manage and control the entire OKD cluster.
+They handle API requests, scheduling, cluster state management, and communication between all components.
+
+### Worker Node (Wroker)
+The Worker nodes run the actual workloads and applications in the OKD cluster.
+They host pods, containers, and services deployed by users.
+
+### Storage Node
+The Storage nodes form a Ceph cluster that provides distributed and highly available storage for the OKD environment.
+They store persistent data used by applications, containers, and internal OKD services.
