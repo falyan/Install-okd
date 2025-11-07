@@ -6,7 +6,7 @@ This document to guide step by step to install OKD version 4 specify [4.17.0-okd
 
 
 ## 📚 Table of Content
-- [Requirement for install](#requirement)
+- [Requirement for installation](#Requirement for installation)
 - [Topology](#struktur-proyek)
 - [Instalasi](#instalasi)
 - [Konfigurasi](#konfigurasi)
@@ -32,7 +32,7 @@ This installation need requirement below.
 
 ### Resolver Record DNS
 
-| Hostname                  | IP Address      | Keterangan            |
+| Hostname                  | IP Address      | Describtion           |
 |----------------------------|-----------------|------------------------|
 | haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
 | api.midagri.gob.pe          | 10.200.106.42   | API endpoint eksternal |
