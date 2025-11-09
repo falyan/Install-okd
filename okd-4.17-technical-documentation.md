@@ -20,6 +20,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 ## Prerequisites Checklist
 This installation need requirement below.
 
+<div align="center">
 | Component                      | Description                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------- |
 | **DNS Resolver**               | A functional DNS record for internal and external name resolution.           |
@@ -32,12 +33,14 @@ This installation need requirement below.
 | **Worker Nodes (3x)**          | Nodes where applications and workloads are deployed.                         |
 | **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage ( Cluster Ceph ).     |
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
+</div>
 
 
 ### Resolver Record DNS
 
 Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
+<div align="center">
 | Hostname                  | IP Address      | Describtion           |
 |----------------------------|-----------------|------------------------|
 | haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
@@ -55,6 +58,7 @@ Configure the DNS server to provide name resolution for all cluster components, 
 | worker4.midagri.gob.pe      | 10.200.106.43   | worker node 4 |
 | worker5.midagri.gob.pe      | 10.200.106.44   | worker node 5 |
 | worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6 |
+</div>
 
 ### Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
@@ -121,6 +125,8 @@ Storage: 120 GB disk space
 
 In production environments, the specifications should be scaled up based on the number of users, workloads, and the total capacity of applications running in the cluster to ensure optimal performance and stability.
 
+
+<div align="center">
 | **Component**          | **Hostname / IP**         | **Operating System**                       | **CPU / RAM / Disk**            | **Main Services / Roles** |
 |--------------------------|---------------------------|--------------------------------------------|----------------------------------|----------------------------|
 | 🧩 **Bastion Server**    | `10.200.106.40`           | Rocky Linux 8.9 (Green Obsidian)           | 8 cores / 8 GB / 120 GB (sda)       | - openshift-installer<br>- NTP Server<br>- DNS Server<br>- Web Server (HTTP)<br>- OC & Kubectl Client<br>- Jump Host |
@@ -129,6 +135,7 @@ In production environments, the specifications should be scaled up based on the 
 | 🧭 **Master Nodes**      | `10.200.106.34–36`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB each (sda)    | - Control Plane (etcd, API, scheduler, controller) |
 | 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 8 GB / 120 GB each (sda)    | - Compute / Application Workloads |
 | 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
+</div>
 
 <p align="center">
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png" alt="OKD Topology" width="600"><br>
@@ -158,7 +165,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
   <em>Figure 3. OKD Network Topology</em>
 </p>
 
-
+<div align="center">
   | Role      | Hostname                 | IP Address    | MAC Address (Example) |
 | --------- | ------------------------ | ------------- | --------------------- |
 | Bastion   | bastion.midagri.gob.pe   | 10.200.106.40 | 50:6b:8d:9a:11:bb     |
@@ -173,6 +180,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 | Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
 
+</div>
 ### 🧾 Explanation
 
 - **Subnet:** 10.200.106.0/24  
