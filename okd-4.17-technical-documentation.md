@@ -1,15 +1,18 @@
 ![Logo](https://res.cloudinary.com/dabkaenvy/image/upload/v1762501262/Openshift_Logo_fj79vu.png)
 
-# OKD INSTALLATION DOCUMENTATION
+# OKD 4.17 - Technical Documentation Package
 
 This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0).
 
 
 ## 📚 Table of Content
-- [Installation Method](#installation-method)
+- [INSTALLATION DOCUMENTATION](#installation-documentation)
+<!-- - [Installation Method](#installation-method)
 - [Prerequisites Checklist](#prerequisites-checklist)
 - [Node Specification and Topology ](#node-specification-and-topology)
-- [Step by Step Procedure Installation](#step-by-step-procedure-installation)
+- [Step by Step Procedure Installation](#step-by-step-procedure-installation) -->
+
+## INSTALLATION DOCUMENTATION
 
 ## Installation Method
 
@@ -19,7 +22,21 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 ## Prerequisites Checklist
 This installation need requirement below.
 
-- Resolver Record DNS
+| Component                      | Description                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------- |
+| **DNS Resolver**               | A functional DNS record for internal and external name resolution.           |
+| **Bastion Server (Jumphost)**  | Used as the main access point to deploy and manage OKD.                      |
+| **Load Balancer (HAProxy)**    | Handles API and application routing for OKD control plane.                   |
+| **NTP Server**                 | Ensures time synchronization across all cluster nodes.                       |
+| **DHCP Server**                | Provides IP address assignment and static leases for cluster nodes.          |
+| **Bootstrap Node (Temporary)** | Used during initial cluster deployment and removed afterward.                |
+| **Master Nodes (3x)**          | Control plane nodes responsible for managing the OKD cluster.                |
+| **Worker Nodes (3x)**          | Nodes where applications and workloads are deployed.                         |
+| **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage (e.g., Ceph, NFS, or ODF).     |
+| **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
+
+
+<!-- - Resolver Record DNS
 - 1 Bastion Server (Jumphost)
 - 1 LoadBalancer Server (Haproxy)
 - NTP server
@@ -28,7 +45,7 @@ This installation need requirement below.
 - 3 Node Master (Control Plane)
 - 3 Worker Node
 - 3 Storage Node
-- Pull Secret
+- Pull Secret -->
 
 ### Resolver Record DNS
 
