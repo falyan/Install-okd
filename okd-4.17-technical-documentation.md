@@ -124,7 +124,7 @@ In production environments, the specifications should be scaled up based on the 
 | 🚀 **Bootstrap Server**  | `10.200.106.41`           | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB (sda)         | - Bootstrap Ignition<br>- Temporary Control Plane<br>- OC & Kubectl Client |
 | 🧭 **Master Nodes**      | `10.200.106.34–36`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB each (sda)    | - Control Plane (etcd, API, scheduler, controller) |
 | 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 8 GB / 120 GB each (sda)    | - Compute / Application Workloads |
-| 💾 **worker Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
+| 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
 
 ![Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png)
 
