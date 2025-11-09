@@ -20,6 +20,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 ## Prerequisites Checklist
 This installation need requirement below.
 
+```bash
 
 | Component                      | Description                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------- |
@@ -34,7 +35,7 @@ This installation need requirement below.
 | **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage ( Cluster Ceph ).     |
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
-
+```
 
 ### Resolver Record DNS
 
