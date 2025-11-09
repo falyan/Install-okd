@@ -147,8 +147,12 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 
    **Note:**
    The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
-
-  ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png)   
+   
+<p align="center">
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png" alt="Network-Topology" width="700"><br>
+  <em>Figure 1. OKD Network Topology</em>
+</p>
+  <!-- ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png)    -->
 
   | Role      | Hostname                 | IP Address    | MAC Address (Example) |
 | --------- | ------------------------ | ------------- | --------------------- |
