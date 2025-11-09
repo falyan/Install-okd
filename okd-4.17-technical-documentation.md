@@ -46,7 +46,7 @@ This installation need requirement below.
 Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
 
-| Hostname                  | IP Address      | Describtion           |
+| Hostname and Domain                 | IP Address      | Describtion           |
 |----------------------------|-----------------|------------------------|
 | haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
 | api.midagri.gob.pe          | 10.200.106.42   | API endpoint eksternal |
