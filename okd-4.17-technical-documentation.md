@@ -206,10 +206,21 @@ Both the DNS and NTP services are installed on the Bastion server (10.200.106.40
 1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
-#### Installation with Bootstraping   
+#### c.Setting http Web Server
+   Install a lightweight web server such as Nginx or Apache to host the Ignition configuration files required during the OKD installation. These Ignition files (bootstrap.ign, master.ign, worker.ign) are fetched by each node during boot using an Ignition URL.
 
-#### **Bootstrap Installation**
+   Example Ignition URLs used in boot parameters:
+
+   ```bash
+   http://10.200.106.40/bootstrap.ign
+   http://10.200.106.40/master.ign
+   http://10.200.106.40/worker.ign
+   ```
+
+#### d. Installation with Bootstraping   
+
+1. **Bootstrap Installation**
    Initialize the control plane and start the cluster on Bootstrap server fot first installation process.
 
-#### **Master Worker & worker Node Joining**
+2. **Master Worker & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
