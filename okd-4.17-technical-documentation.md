@@ -32,20 +32,9 @@ This installation need requirement below.
 | **Bootstrap Node (Temporary)** | Used during initial cluster deployment and removed afterward.                |
 | **Master Nodes (3x)**          | Control plane nodes responsible for managing the OKD cluster.                |
 | **Worker Nodes (3x)**          | Nodes where applications and workloads are deployed.                         |
-| **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage (e.g., Ceph, NFS, or ODF).     |
+| **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage ( Cluster Ceph ).     |
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
-
-<!-- - Resolver Record DNS
-- 1 Bastion Server (Jumphost)
-- 1 LoadBalancer Server (Haproxy)
-- NTP server
-- DHCP server
-- 1 Node Bootstrap Server (Temporary)
-- 3 Node Master (Control Plane)
-- 3 Worker Node
-- 3 Storage Node
-- Pull Secret -->
 
 ### Resolver Record DNS
 
@@ -179,14 +168,15 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 | Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
 
-**Explaination:**<br>
-**Subnet:** 10.200.106.0/24 <br>
-**Gateway:** 10.200.106.1 <br>
-**Bastion Host:** Provides DNS and NTP services <br>
-**DHCP Server:** Runs on Ubuntu (10.200.106.42) <br>
-**Dynamic Range:** 10.200.106.50–100 <br>
-**Static IPs:** Reserved for OKD components <br>
-**MAC Addresses:** Example only — replace with real hardware values <br>
+### 🧾 Explanation
+
+- **Subnet:** 10.200.106.0/24  
+- **Gateway:** 10.200.106.1  
+- **Bastion Host:** Provides DNS and NTP services  
+- **DHCP Server:** Runs on Ubuntu (10.200.106.42)  
+- **Dynamic Range:** 10.200.106.50–100  
+- **Static IPs:** Reserved for OKD components  
+- **MAC Addresses:** Example only — replace with real hardware values  
  
 
 2. **DNS & NTP Configuration** <br>
