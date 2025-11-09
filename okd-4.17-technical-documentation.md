@@ -11,12 +11,12 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 - [INSTALLATION DOCUMENTATION](#installation-documentation)
 
 ## INSTALLATION DOCUMENTATION
-- [Installation Method](#installation-method)
+- [Installation Method](#1.-installation-method)
 - [Prerequisites Checklist](#prerequisites-checklist)
 - [Node Specification and Topology](#node-specification-and-topology)
 
 
-### Installation Method
+### 1. Installation Method
 
  This installation uses the User Provisioned Infrastructure (UPI) method. User Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
@@ -116,7 +116,6 @@ If you prefer to use a community, you can use an like this:
 ```
 
 ## Node Specification and Topology
-## 🧱 OKD 4.17 Cluster Node Specification
 
 For POC or development environments, each OKD 4.17 node should have at least the following specifications:
 
@@ -147,7 +146,7 @@ In production environments, the specifications should be scaled up based on the 
 
 
 
-# Step by Step Procedure Installation
+## Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
 - [Network Routing](#retwork-routing)
@@ -155,7 +154,7 @@ In this installation phase, we will perform the following steps to deploy and co
 - [Setting http Web Server](#setting-http-web-server)
 - [Installation with Bootstraping](#installation-with-bootstraping)
 
-## Network Routing
+### Network Routing
 
 1. **DHCP Setup** 
 Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
