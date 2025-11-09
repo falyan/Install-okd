@@ -41,7 +41,7 @@ This installation need requirement below.
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
 
-#### DNS Resolver
+#### a. DNS Resolver
 
 Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
@@ -65,7 +65,7 @@ Configure the DNS server to provide name resolution for all cluster components, 
 | worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6 |
 
 
-#### Bastion Server (Jumphost)
+#### b. Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
 - **Secure gateway** for accessing all cluster nodes (master, worker).  
 - **Central point for installation and administration** (`oc`, `kubectl`).  
@@ -77,32 +77,32 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
   <em>Figure 1. OKD Bastion</em>
 </p>
 
-#### LoadBalancer (HAProxy)
+#### c. LoadBalancer (HAProxy)
 HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
 It ensures high availability, failover, and reliable access to services like api.midagri.gob.pe, api-int.midagri.gob.pe, and *.apps.midagri.gob.pe.
 
-#### NTP Server 
+#### d. NTP Server 
 Deploy an NTP (Network Time Protocol) server and configure all nodes — Bastion, Bootstrap, Master, and Worker — to synchronize time. Accurate time synchronization prevents TLS and authentication issues during the installation, the NTP server source depends on your region. Makesure the ntp server running well and sync with your region, because the Control Plane IP will be assigned via DHCP. If your DHCP server does not provide time information, the control plane bootstrap process may fail.
 
-#### DHCP Server
+#### e. DHCP Server
 Configure a DHCP server to automatically assign Fix IP addresses with NIC and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
 
-#### Node Bootstrap Server (Temporary)
+#### f. Node Bootstrap Server (Temporary)
 The Bootstrap node in OKD is a temporary node used during cluster installation.
 It initializes the control plane, deploys the first master components, and then becomes unnecessary after the cluster is fully up and running.
 
-#### Master Node (Control Plane)
+#### g. Master Node (Control Plane)
 The Master nodes (Control Plane) manage and control the entire OKD cluster.
 They handle API requests, scheduling, cluster state management, and communication between all components.
 
-#### Worker Node (Wroker)
+#### h. Worker Node (Wroker)
 The Worker nodes run the actual workloads and applications in the OKD cluster.
 They host pods, containers, and services deployed by users.
 
-#### Storage Node (Persisten Volume)
+#### i. Storage Node (Persisten Volume)
 The storage in this setup is organized as a Ceph cluster, providing distributed and highly available storage for the OKD environment. Initially, the storage nodes are configured as worker nodes, allowing them to participate in the OKD cluster while also hosting Ceph storage services. These storage nodes store persistent data used by applications, containers, and internal OKD services, ensuring data redundancy and reliability across the cluster.
 
-#### Pull Secret 
+#### j. Pull Secret 
 The pull secret is required for OKD installation to authenticate and pull container images from the registry.
 
 You can get it from the official OKD site:
@@ -152,12 +152,12 @@ In production environments, the specifications should be scaled up based on the 
 ### 5. Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
-- [Network Routing](#retwork-routing)
+- [Network Routing](#network-routing)
 - [Create OKD Manifest](#create-okd-manifest)
 - [Setting http Web Server](#setting-http-web-server)
 - [Installation with Bootstraping](#installation-with-bootstraping)
 
-#### Network Routing
+#### a. Network Routing
 
 1. **DHCP Setup** 
 Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
@@ -201,15 +201,15 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
    Set up name resolution and time synchronization for all cluster nodes.
 Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
 
-#### Create OKD Manifest   
+#### b. Create OKD Manifest   
 
 1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
 #### Installation with Bootstraping   
 
-2.  **Bootstrap Installation**
+#### **Bootstrap Installation**
    Initialize the control plane and start the cluster on Bootstrap server fot first installation process.
 
-3. **Master Worker & worker Node Joining**
+#### **Master Worker & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
