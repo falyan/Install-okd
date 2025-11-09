@@ -2,16 +2,16 @@
 
 # OKD INSTALLATION DOCUMENTATION
 
-This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0)
+This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0). This installation uses the User Provisioned Infrastructure (UPI) method. User-Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
 
 ## 📚 Table of Content
-- [Requirement for installation](#requirement-for-installation)
+- [Prerequisites Checklist](#prerequisites-checklist)
 - [Node Specification and Topology ](#node-specification-and-topology)
 - [Installation](#installation)
 
 
-## Requirement for installation
+## Prerequisites Checklist
 This installation need requirement below.
 
 - Resolver Record DNS
@@ -23,6 +23,7 @@ This installation need requirement below.
 - 3 Node Master (Control Plane)
 - 3 Worker Node
 - 3 Storage Node
+- Pull Secret
 
 ### Resolver Record DNS
 
