@@ -15,7 +15,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 - [Prerequisites Checklist](#2-prerequisites-checklist)
 - [Node Specification](#3-node-specification)
 - [Topology](#4-topology)
-- [Step by Step Procedure Installation](5-step-by-step-procedure-installation)
+- [Step by Step Procedure Installation](#5-step-by-step-procedure-installation)
 
 
 ### 1. Installation Method
