@@ -61,6 +61,11 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 - **Stores important configuration files** such as `kubeconfig` and `install-config.yaml`.  
 - **Isolates the network** — only the bastion can SSH into cluster nodes.
 
+<p align="center">
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png" alt="OKD Bastion" width="400"><br>
+  <em>Figure 1. OKD Bastion</em>
+</p>
+
 ![Bastion](https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png)
 
 ### LoadBalancer (Haproxy)
@@ -125,7 +130,11 @@ In production environments, the specifications should be scaled up based on the 
 | 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 8 GB / 120 GB each (sda)    | - Compute / Application Workloads |
 | 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
 
-![Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png)
+<p align="center">
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png" alt="OKD Topology" width="400"><br>
+  <em>Figure 2. OKD OKD Topology</em>
+</p>
+
 
 
 # Step by Step Procedure Installation
@@ -146,7 +155,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 
 <p align="center">
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png" alt="Network-Topology" width="400"><br>
-  <em>Figure 1. OKD Network Topology</em>
+  <em>Figure 2. OKD Network Topology</em>
 </p>
 
 
