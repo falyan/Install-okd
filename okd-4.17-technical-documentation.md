@@ -7,17 +7,21 @@
 This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0).
 
 
-## 📚 Table of Content
+# 📚 Table of Content
 - [INSTALLATION DOCUMENTATION](#installation-documentation)
 
 ## INSTALLATION DOCUMENTATION
+- [Installation Method](#installation-method)
+- [Prerequisites Checklist](#prerequisites-checklist)
+- [Node Specification and Topology](#node-specification-and-topology)
 
-## Installation Method
+
+### Installation Method
 
  This installation uses the User Provisioned Infrastructure (UPI) method. User Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
 
-## Prerequisites Checklist
+### Prerequisites Checklist
 This installation need requirement below.
 
 
@@ -35,7 +39,7 @@ This installation need requirement below.
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
 
-### Resolver Record DNS
+#### Resolver Record DNS
 
 Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
@@ -59,7 +63,7 @@ Configure the DNS server to provide name resolution for all cluster components, 
 | worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6 |
 
 
-### Bastion Server (Jumphost)
+#### Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
 - **Secure gateway** for accessing all cluster nodes (master, worker).  
 - **Central point for installation and administration** (`oc`, `kubectl`).  
@@ -71,32 +75,32 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
   <em>Figure 1. OKD Bastion</em>
 </p>
 
-### LoadBalancer (Haproxy)
+#### LoadBalancer (Haproxy)
 HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
 It ensures high availability, failover, and reliable access to services like api.midagri.gob.pe, api-int.midagri.gob.pe, and *.apps.midagri.gob.pe.
 
-### NTP Server 
+#### NTP Server 
 Deploy an NTP (Network Time Protocol) server and configure all nodes — Bastion, Bootstrap, Master, and Worker — to synchronize time. Accurate time synchronization prevents TLS and authentication issues during the installation, the NTP server source depends on your region. Makesure the ntp server running well and sync with your region, because the Control Plane IP will be assigned via DHCP. If your DHCP server does not provide time information, the control plane bootstrap process may fail.
 
-### DHCP Server
+#### DHCP Server
 Configure a DHCP server to automatically assign Fix IP addresses with NIC and provide essential options such as gateway, DNS, and NTP servers. This setup simplifies the network configuration of CoreOS-based nodes during boot.
 
-### Node Bootstrap Server (Temporary)
+#### Node Bootstrap Server (Temporary)
 The Bootstrap node in OKD is a temporary node used during cluster installation.
 It initializes the control plane, deploys the first master components, and then becomes unnecessary after the cluster is fully up and running.
 
-### Master Node (Control Plane)
+#### Master Node (Control Plane)
 The Master nodes (Control Plane) manage and control the entire OKD cluster.
 They handle API requests, scheduling, cluster state management, and communication between all components.
 
-### Worker Node (Wroker)
+#### Worker Node (Wroker)
 The Worker nodes run the actual workloads and applications in the OKD cluster.
 They host pods, containers, and services deployed by users.
 
-### Storage Node (Persisten Volume)
+#### Storage Node (Persisten Volume)
 The storage in this setup is organized as a Ceph cluster, providing distributed and highly available storage for the OKD environment. Initially, the storage nodes are configured as worker nodes, allowing them to participate in the OKD cluster while also hosting Ceph storage services. These storage nodes store persistent data used by applications, containers, and internal OKD services, ensuring data redundancy and reliability across the cluster.
 
-### Pull Secret 
+#### Pull Secret 
 The pull secret is required for OKD installation to authenticate and pull container images from the registry.
 
 You can get it from the official OKD site:
@@ -111,7 +115,7 @@ If you prefer to use a community, you can use an like this:
 
 ```
 
-# Node Specification and Topology
+## Node Specification and Topology
 ## 🧱 OKD 4.17 Cluster Node Specification
 
 For POC or development environments, each OKD 4.17 node should have at least the following specifications:
