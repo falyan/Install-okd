@@ -90,10 +90,7 @@ The Worker nodes run the actual workloads and applications in the OKD cluster.
 They host pods, containers, and services deployed by users.
 
 ### Storage Node (Persisten Volume)
-The storage in this setup is organized as a Ceph cluster, providing distributed and highly available storage for the OKD environment.
-Initially, the storage nodes are configured as worker nodes, allowing them to participate in the OKD cluster while also hosting Ceph storage services.
-
-These storage nodes store persistent data used by applications, containers, and internal OKD services, ensuring data redundancy and reliability across the cluster.
+The storage in this setup is organized as a Ceph cluster, providing distributed and highly available storage for the OKD environment. Initially, the storage nodes are configured as worker nodes, allowing them to participate in the OKD cluster while also hosting Ceph storage services. These storage nodes store persistent data used by applications, containers, and internal OKD services, ensuring data redundancy and reliability across the cluster.
 
 ### Pull Secret 
 The pull secret is required for OKD installation to authenticate and pull container images from the registry.
@@ -146,11 +143,10 @@ In this installation phase, we will perform the following steps to deploy and co
 ## Network Routing
 
 1. **DHCP Setup** 
-   Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
+Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
 
-**Note:**
-The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.
-In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
+   **Note:**
+   The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
 
   ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png)   
 
