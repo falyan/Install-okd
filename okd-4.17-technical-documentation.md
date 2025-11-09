@@ -108,6 +108,16 @@ If you prefer to use a community, you can use an like this:
 # Node Specification and Topology
 ## 🧱 OKD 4.17 Cluster Node Specification
 
+For POC or development environments, each OKD 4.17 node should have at least the following specifications:
+
+CPU: 8 cores
+
+Memory: 16 GB RAM
+
+Storage: 120 GB disk space
+
+In production environments, the specifications should be scaled up based on the number of users, workloads, and the total capacity of applications running in the cluster to ensure optimal performance and stability.
+
 | **Component**          | **Hostname / IP**         | **Operating System**                       | **CPU / RAM / Disk**            | **Main Services / Roles** |
 |--------------------------|---------------------------|--------------------------------------------|----------------------------------|----------------------------|
 | 🧩 **Bastion Server**    | `10.200.106.40`           | Rocky Linux 8.9 (Green Obsidian)           | 8 cores / 8 GB / 120 GB (sda)       | - openshift-installer<br>- NTP Server<br>- DNS Server<br>- Web Server (HTTP)<br>- OC & Kubectl Client<br>- Jump Host |
