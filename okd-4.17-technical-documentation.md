@@ -2,13 +2,19 @@
 
 # OKD INSTALLATION DOCUMENTATION
 
-This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0). This installation uses the User Provisioned Infrastructure (UPI) method. User-Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
+This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0).
 
 
 ## 📚 Table of Content
+- [Installation Methocd](#installation-method)
 - [Prerequisites Checklist](#prerequisites-checklist)
 - [Node Specification and Topology ](#node-specification-and-topology)
+- [Network configuration CIDR ranges, DNS, routing](#network-configuration)
 - [Installation](#installation)
+
+## Installation Methocd
+
+ This installation uses the User Provisioned Infrastructure (UPI) method. User-Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
 
 ## Prerequisites Checklist
@@ -22,7 +28,7 @@ This installation need requirement below.
 - 1 Node Bootstrap Server (Temporary)
 - 3 Node Master (Control Plane)
 - 3 Worker Node
-- 3 Storage Node
+- 3 worker Node
 - Pull Secret
 
 ### Resolver Record DNS
@@ -43,9 +49,9 @@ Configure the DNS server to provide name resolution for all cluster components, 
 | worker1.midagri.gob.pe      | 10.200.106.37   | Worker node 1 |
 | worker2.midagri.gob.pe      | 10.200.106.38   | Worker node 2 |
 | worker3.midagri.gob.pe      | 10.200.106.39   | Worker node 3 |
-| storage1.midagri.gob.pe      | 10.200.106.43   | Storage 1 |
-| storage2.midagri.gob.pe      | 10.200.106.44   | Storage 2 |
-| storage3.midagri.gob.pe      | 10.200.106.45   | Storage 3 |
+| worker4.midagri.gob.pe      | 10.200.106.43   | worker node 4 |
+| worker5.midagri.gob.pe      | 10.200.106.44   | worker node 5 |
+| worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6 |
 
 ### Bastion Server (Jumphost)
 In an OKD environment (Origin Community Distribution of Kubernetes, the open-source version of OpenShift), the bastion server plays a crucial role, especially during cluster setup and administration.
@@ -78,9 +84,24 @@ They handle API requests, scheduling, cluster state management, and communicatio
 The Worker nodes run the actual workloads and applications in the OKD cluster.
 They host pods, containers, and services deployed by users.
 
-### Storage Node
-The Storage nodes form a Ceph cluster that provides distributed and highly available storage for the OKD environment.
+### worker Node
+The worker nodes form a Ceph cluster that provides distributed and highly available worker for the OKD environment.
 They store persistent data used by applications, containers, and internal OKD services.
+
+### Pull Secret 
+The pull secret is required for OKD installation to authenticate and pull container images from the registry.
+
+You can get it from the official OKD site:
+👉 https://console.redhat.com/openshift/install/pull-secret
+
+Login with your Red Hat account, then copy the JSON content and paste it into your install-config.yaml under the pullSecret field.
+
+If you prefer to use a community, you can use an like this:
+
+```bash
+ { "auths": { "fake": { "auth": "aWQ6cGFzcwo=" } } }
+
+```
 
 # Node Specification and Topology
 ## 🧱 OKD 4.17 Cluster Node Specification
@@ -92,12 +113,15 @@ They store persistent data used by applications, containers, and internal OKD se
 | 🚀 **Bootstrap Server**  | `10.200.106.41`           | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB (sda)         | - Bootstrap Ignition<br>- Temporary Control Plane<br>- OC & Kubectl Client |
 | 🧭 **Master Nodes**      | `10.200.106.34–36`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 16 GB / 120 GB each (sda)    | - Control Plane (etcd, API, scheduler, controller) |
 | 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 32 cores / 32 GB / 120 GB each (sda)    | - Compute / Application Workloads |
-| 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed storage, persistent volumes) |
+| 💾 **worker Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
 
 ![Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png)
 
-# Installation
+
+# Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
+
+## Network Routing
 
 1. [**DHCP Setup** ](#dhcp-setup) 
    Configure dynamic IP address allocation and network boot.
@@ -105,11 +129,11 @@ In this installation phase, we will perform the following steps to deploy and co
 2. [**DNS & NTP Configuration**](#dns-&-ntp-configuration) 
    Set up name resolution and time synchronization for all cluster nodes.
 
-3. [**Ignition File Generation**](#ignition-file-generation)
+## [**Ignition File Generation**](#ignition-file-generation)
    Create ignition files for the bootstrap, master, and worker nodes ojn bastion server
 
-4. [**Bootstrap Installation**](#bootstrap-installation) 
+1. [**Bootstrap Installation**](#bootstrap-installation) 
    Initialize the control plane and start the cluster installation process.
 
-5. [**Master Worker & Storage Node Joining**](#master-worker-&-storage-node-joining) 
+2. [**Master Worker & worker Node Joining**](#master-worker-&-worker-node-joining) 
    Join remaining nodes to complete the OKD cluster setup.
