@@ -9,6 +9,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 
 # 📚 Table of Content
 - [INSTALLATION DOCUMENTATION](#installation-documentation)
+- [CONFIGURATION DOCUMENTATION](#configuration-documentation)
 
 ## INSTALLATION DOCUMENTATION
 - [Installation Method](#1-installation-method)
@@ -200,9 +201,11 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 2. **DNS & NTP Configuration** 
    Set up name resolution and time synchronization for all cluster nodes. Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
 
+3. **Haproxy Configuration** 
+
 #### b. Create OKD Manifest   
 
-   Ignition File Generation Create ignition files for the bootstrap, master, and worker nodes on bastion server
+   Ignition File Generation Create ignition files for the bootstrap, master, and worker nodes on bastion server.
 
 #### c. Setting http Web Server
    Install a lightweight web server such as Nginx or Apache to host the Ignition configuration files required during the OKD installation. These Ignition files (bootstrap.ign, master.ign, worker.ign) are fetched by each node during boot using an Ignition URL.
@@ -222,3 +225,8 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 
 2. **Master & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
+
+## CONFIGURATION DOCUMENTATION
+- [DHCP Configuration](#1-dhcp-configuration)
+- [DNS Configuration](#2-dns-configuration)
+- [NTP Configuration](#3-dns-configuration)
