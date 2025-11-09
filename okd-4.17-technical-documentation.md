@@ -14,7 +14,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 
 ## Installation Method
 
- This installation uses the User Provisioned Infrastructure (UPI) method. User-Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
+ This installation uses the User Provisioned Infrastructure (UPI) method. User Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
 
 ## Prerequisites Checklist
@@ -28,7 +28,7 @@ This installation need requirement below.
 - 1 Node Bootstrap Server (Temporary)
 - 3 Node Master (Control Plane)
 - 3 Worker Node
-- 3 worker Node
+- 3 Storage Node
 - Pull Secret
 
 ### Resolver Record DNS
@@ -84,9 +84,11 @@ They handle API requests, scheduling, cluster state management, and communicatio
 The Worker nodes run the actual workloads and applications in the OKD cluster.
 They host pods, containers, and services deployed by users.
 
-### worker Node
-The worker nodes form a Ceph cluster that provides distributed and highly available worker for the OKD environment.
-They store persistent data used by applications, containers, and internal OKD services.
+### Storage Node (Persisten Volume)
+The storage in this setup is organized as a Ceph cluster, providing distributed and highly available storage for the OKD environment.
+Initially, the storage nodes are configured as worker nodes, allowing them to participate in the OKD cluster while also hosting Ceph storage services.
+
+These storage nodes store persistent data used by applications, containers, and internal OKD services, ensuring data redundancy and reliability across the cluster.
 
 ### Pull Secret 
 The pull secret is required for OKD installation to authenticate and pull container images from the registry.
