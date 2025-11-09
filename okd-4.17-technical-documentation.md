@@ -166,7 +166,8 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 </p>
 
 
-  | Role      | Hostname                 | IP Address    | MAC Address (Example) |
+<p align="center"><b>Network Table</b></p>
+| Role      | Hostname                 | IP Address    | MAC Address (Example) |
 | --------- | ------------------------ | ------------- | --------------------- |
 | Bastion   | bastion.midagri.gob.pe   | 10.200.106.40 | 50:6b:8d:9a:11:bb     |
 | Bootstrap | bootstrap.midagri.gob.pe | 10.200.106.41 | 50:6b:8d:9a:11:aa     |
