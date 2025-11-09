@@ -164,13 +164,13 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 
 🧩 Notes
 
-**Subnet:** 10.200.106.0/24
-**Gateway:** 10.200.106.1
-**Bastion Host:** Provides DNS and NTP services
-**DHCP Server:** Runs on Ubuntu (10.200.106.42)
-**Dynamic Range:** 10.200.106.50–100
-**Static IPs:** Reserved for OKD components
-**MAC Addresses:** Example only — replace with real hardware values
+**Subnet:** 10.200.106.0/24 <br>
+**Gateway:** 10.200.106.1 <br>
+**Bastion Host:** Provides DNS and NTP services <br>
+**DHCP Server:** Runs on Ubuntu (10.200.106.42) <br>
+**Dynamic Range:** 10.200.106.50–100 <br>
+**Static IPs:** Reserved for OKD components <br>
+**MAC Addresses:** Example only — replace with real hardware values <br>
  
 
 2. **DNS & NTP Configuration**
