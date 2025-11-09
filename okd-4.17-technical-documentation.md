@@ -198,13 +198,11 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
  
 
 2. **DNS & NTP Configuration** 
-   Set up name resolution and time synchronization for all cluster nodes.
-Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
+   Set up name resolution and time synchronization for all cluster nodes. Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
 
 #### b. Create OKD Manifest   
 
-1.  **Ignition File Generation**
-   Create ignition files for the bootstrap, master, and worker nodes on bastion server
+   Ignition File Generation Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
 #### c. Setting http Web Server
    Install a lightweight web server such as Nginx or Apache to host the Ignition configuration files required during the OKD installation. These Ignition files (bootstrap.ign, master.ign, worker.ign) are fetched by each node during boot using an Ignition URL.
