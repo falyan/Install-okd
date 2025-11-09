@@ -1,4 +1,6 @@
-![Logo](https://res.cloudinary.com/dabkaenvy/image/upload/v1762501262/Openshift_Logo_fj79vu.png)
+<p align="center">
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762501262/Openshift_Logo_fj79vu.png" alt="Cover" width="600"><br>
+</p>
 
 # OKD 4.17 - Technical Documentation Package
 
