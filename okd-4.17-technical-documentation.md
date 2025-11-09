@@ -7,10 +7,6 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 
 ## 📚 Table of Content
 - [INSTALLATION DOCUMENTATION](#installation-documentation)
-<!-- - [Installation Method](#installation-method)
-- [Prerequisites Checklist](#prerequisites-checklist)
-- [Node Specification and Topology ](#node-specification-and-topology)
-- [Step by Step Procedure Installation](#step-by-step-procedure-installation) -->
 
 ## INSTALLATION DOCUMENTATION
 
@@ -152,7 +148,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png" alt="Network-Topology" width="400"><br>
   <em>Figure 1. OKD Network Topology</em>
 </p>
-  <!-- ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png)    -->
+
 
   | Role      | Hostname                 | IP Address    | MAC Address (Example) |
 | --------- | ------------------------ | ------------- | --------------------- |
