@@ -15,7 +15,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 - [Prerequisites Checklist](#2-prerequisites-checklist)
 - [Node Specification](#3-node-specification)
 - [Topology](#4-topology)
-- [Step by Step Procedure Installation](4-step-by-step-procedure-installation)
+- [Step by Step Procedure Installation](5-step-by-step-procedure-installation)
 
 
 ### 1. Installation Method
@@ -149,7 +149,7 @@ In production environments, the specifications should be scaled up based on the 
 
 
 
-### 4. Step by Step Procedure Installation
+### 5. Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
 - [Network Routing](#retwork-routing)
@@ -157,7 +157,7 @@ In this installation phase, we will perform the following steps to deploy and co
 - [Setting http Web Server](#setting-http-web-server)
 - [Installation with Bootstraping](#installation-with-bootstraping)
 
-### Network Routing
+#### Network Routing
 
 1. **DHCP Setup** 
 Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
@@ -186,7 +186,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
 
 
-### 🧾 Explanation
+#### 🧾 Explanation
 
 - **Subnet:** 10.200.106.0/24  
 - **Gateway:** 10.200.106.1  
@@ -197,16 +197,16 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 - **MAC Addresses:** Example only — replace with real hardware values  
  
 
-2. **DNS & NTP Configuration** <br>
+2. **DNS & NTP Configuration** 
    Set up name resolution and time synchronization for all cluster nodes.
 Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
 
-## Create OKD Manifest   
+#### Create OKD Manifest   
 
 1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
-## Installation with Bootstraping   
+#### Installation with Bootstraping   
 
 2.  **Bootstrap Installation**
    Initialize the control plane and start the cluster on Bootstrap server fot first installation process.
