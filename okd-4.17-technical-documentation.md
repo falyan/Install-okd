@@ -140,9 +140,13 @@ In this installation phase, we will perform the following steps to deploy and co
 ## Network Routing
 
 1. **DHCP Setup** 
-   Configure dynamic IP address allocation and network boot. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
-   
-  ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762675860/Screenshot_2025-11-09_at_15.10.23_jpahs2.png)   
+   Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
+
+   💡 Note:
+The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.
+In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
+
+  ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png)   
 
   | Role      | Hostname                 | IP Address    | MAC Address (Example) |
 | --------- | ------------------------ | ------------- | --------------------- |
@@ -159,10 +163,7 @@ In this installation phase, we will perform the following steps to deploy and co
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
  
 
-
-
-
-2. [**DNS & NTP Configuration**] 
+2. **DNS & NTP Configuration**
    Set up name resolution and time synchronization for all cluster nodes.
 
 ## Create OKD Manifest   
