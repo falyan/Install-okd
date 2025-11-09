@@ -135,17 +135,21 @@ In this installation phase, we will perform the following steps to deploy and co
 
 ## Network Routing
 
-1. [**DHCP Setup** ](#dhcp-setup) 
+1. [**DHCP Setup** ] 
    Configure dynamic IP address allocation and network boot.
 
-2. [**DNS & NTP Configuration**](#dns-&-ntp-configuration) 
+2. [**DNS & NTP Configuration**] 
    Set up name resolution and time synchronization for all cluster nodes.
 
-## [**Ignition File Generation**](#ignition-file-generation)
+## Create OKD Manifest   
+
+1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes ojn bastion server
 
-1. [**Bootstrap Installation**](#bootstrap-installation) 
+## Installation OKD   
+
+2.  **Bootstrap Installation**
    Initialize the control plane and start the cluster installation process.
 
-2. [**Master Worker & worker Node Joining**](#master-worker-&-worker-node-joining) 
+3. **Master Worker & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
