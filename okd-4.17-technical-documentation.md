@@ -6,13 +6,13 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 
 
 ## 📚 Table of Content
-- [Installation Methocd](#installation-method)
+- [Installation Method](#installation-method)
 - [Prerequisites Checklist](#prerequisites-checklist)
 - [Node Specification and Topology ](#node-specification-and-topology)
 - [Network configuration CIDR ranges, DNS, routing](#network-configuration)
 - [Installation](#installation)
 
-## Installation Methocd
+## Installation Method
 
  This installation uses the User Provisioned Infrastructure (UPI) method. User-Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
