@@ -62,11 +62,9 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
 - **Isolates the network** — only the bastion can SSH into cluster nodes.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png" alt="OKD Bastion" width="400"><br>
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png" alt="OKD Bastion" width="600"><br>
   <em>Figure 1. OKD Bastion</em>
 </p>
-
-![Bastion](https://res.cloudinary.com/dabkaenvy/image/upload/v1762506600/bastion.drawio_yzugrw.png)
 
 ### LoadBalancer (Haproxy)
 HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
@@ -131,7 +129,7 @@ In production environments, the specifications should be scaled up based on the 
 | 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png" alt="OKD Topology" width="400"><br>
+  <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png" alt="OKD Topology" width="600"><br>
   <em>Figure 2. OKD OKD Topology</em>
 </p>
 
