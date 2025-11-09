@@ -155,7 +155,7 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 
 <p align="center">
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png" alt="Network-Topology" width="400"><br>
-  <em>Figure 2. OKD Network Topology</em>
+  <em>Figure 3. OKD Network Topology</em>
 </p>
 
 
