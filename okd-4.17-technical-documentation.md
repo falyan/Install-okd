@@ -40,7 +40,7 @@ This installation need requirement below.
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
 
-#### Resolver Record DNS
+#### DNS Resolver
 
 Configure the DNS server to provide name resolution for all cluster components, such as api.midagri.gob.pe, api-int.midagri.gob.pe, and node hostnames. Proper DNS configuration ensures that services can be correctly resolved within the cluster.
 
@@ -76,7 +76,7 @@ In an OKD environment (Origin Community Distribution of Kubernetes, the open-sou
   <em>Figure 1. OKD Bastion</em>
 </p>
 
-#### LoadBalancer (Haproxy)
+#### LoadBalancer (HAProxy)
 HAProxy in an OKD environment acts as a load balancer that distributes incoming API and application traffic across the master and worker nodes.
 It ensures high availability, failover, and reliable access to services like api.midagri.gob.pe, api-int.midagri.gob.pe, and *.apps.midagri.gob.pe.
 
@@ -120,11 +120,12 @@ If you prefer to use a community, you can use an like this:
 
 For POC or development environments, each OKD 4.17 node should have at least the following specifications:
 
-CPU: 8 cores
+| Resource | Specification     |
+| -------- | ----------------- |
+| CPU      | 8 cores           |
+| Memory   | 16 GB RAM         |
+| Storage  | 120 GB disk space |
 
-Memory: 16 GB RAM
-
-Storage: 120 GB disk space
 
 In production environments, the specifications should be scaled up based on the number of users, workloads, and the total capacity of applications running in the cluster to ensure optimal performance and stability.
 
