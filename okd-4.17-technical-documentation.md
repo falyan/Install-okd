@@ -206,7 +206,7 @@ Both the DNS and NTP services are installed on the Bastion server (10.200.106.40
 1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
-#### c.Setting http Web Server
+#### c. Setting http Web Server
    Install a lightweight web server such as Nginx or Apache to host the Ignition configuration files required during the OKD installation. These Ignition files (bootstrap.ign, master.ign, worker.ign) are fetched by each node during boot using an Ignition URL.
 
    Example Ignition URLs used in boot parameters:
