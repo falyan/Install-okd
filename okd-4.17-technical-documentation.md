@@ -20,7 +20,6 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 ## Prerequisites Checklist
 This installation need requirement below.
 
-```bash
 
 | Component                      | Description                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------- |
@@ -35,7 +34,6 @@ This installation need requirement below.
 | **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage ( Cluster Ceph ).     |
 | **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
 
-```
 
 ### Resolver Record DNS
 
@@ -200,12 +198,12 @@ Both the DNS and NTP services are installed on the Bastion server (10.200.106.40
 ## Create OKD Manifest   
 
 1.  **Ignition File Generation**
-   Create ignition files for the bootstrap, master, and worker nodes ojn bastion server
+   Create ignition files for the bootstrap, master, and worker nodes on bastion server
 
 ## Installation with Bootstraping   
 
 2.  **Bootstrap Installation**
-   Initialize the control plane and start the cluster installation process.
+   Initialize the control plane and start the cluster on Bootstrap server fot first installation process.
 
 3. **Master Worker & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
