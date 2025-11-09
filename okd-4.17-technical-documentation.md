@@ -132,10 +132,35 @@ In production environments, the specifications should be scaled up based on the 
 # Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
+- [Network Routing](#retwork-routing)
+- [Create OKD Manifest](#create-okd-manifest)
+- [Setting http Web Server](#setting-http-web-server)
+- [Installation with Bootstraping](#installation-with-bootstraping)
+
 ## Network Routing
 
-1. [**DHCP Setup** ] 
-   Configure dynamic IP address allocation and network boot.
+1. **DHCP Setup** 
+   Configure dynamic IP address allocation and network boot. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
+   
+  ![Netwokr-Topology](https://res.cloudinary.com/dabkaenvy/image/upload/v1762675860/Screenshot_2025-11-09_at_15.10.23_jpahs2.png)   
+
+  | Role      | Hostname                 | IP Address    | MAC Address (Example) |
+| --------- | ------------------------ | ------------- | --------------------- |
+| Bastion   | bastion.midagri.gob.pe   | 10.200.106.40 | 50:6b:8d:9a:11:bb     |
+| Bootstrap | bootstrap.midagri.gob.pe | 10.200.106.41 | 50:6b:8d:9a:11:aa     |
+| Master 1  | master1.midagri.gob.pe   | 10.200.106.34 | 50:6b:8d:9a:11:c1     |
+| Master 2  | master2.midagri.gob.pe   | 10.200.106.35 | 50:6b:8d:9a:11:c2     |
+| Master 3  | master3.midagri.gob.pe   | 10.200.106.36 | 50:6b:8d:9a:11:c3     |
+| Worker 1  | worker1.midagri.gob.pe   | 10.200.106.37 | 50:6b:8d:9a:11:d1     |
+| Worker 2  | worker2.midagri.gob.pe   | 10.200.106.38 | 50:6b:8d:9a:11:d2     |
+| Worker 3  | worker3.midagri.gob.pe   | 10.200.106.39 | 50:6b:8d:9a:11:d3     |
+| Worker 4  | worker4.midagri.gob.pe   | 10.200.106.43 | 50:6b:8d:9a:11:d4     |
+| Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
+| Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
+ 
+
+
+
 
 2. [**DNS & NTP Configuration**] 
    Set up name resolution and time synchronization for all cluster nodes.
@@ -145,7 +170,7 @@ In this installation phase, we will perform the following steps to deploy and co
 1.  **Ignition File Generation**
    Create ignition files for the bootstrap, master, and worker nodes ojn bastion server
 
-## Installation OKD   
+## Installation with Bootstraping   
 
 2.  **Bootstrap Installation**
    Initialize the control plane and start the cluster installation process.
