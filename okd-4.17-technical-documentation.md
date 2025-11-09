@@ -11,9 +11,10 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 - [INSTALLATION DOCUMENTATION](#installation-documentation)
 
 ## INSTALLATION DOCUMENTATION
-- [Installation Method](#1.-installation-method)
-- [Prerequisites Checklist](#prerequisites-checklist)
-- [Node Specification and Topology](#node-specification-and-topology)
+- [Installation Method](#1-installation-method)
+- [Prerequisites Checklist](#2-prerequisites-checklist)
+- [Node Specification and Topology](#3-node-specification-and-topology)
+- [Step by Step Procedure Installation](4-step-by-step-procedure-installation)
 
 
 ### 1. Installation Method
@@ -21,7 +22,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
  This installation uses the User Provisioned Infrastructure (UPI) method. User Provisioned Infrastructure (UPI) is an installation method in which the user is responsible for manually setting up and managing all the infrastructure components required for OKD, including virtual machines, networking, DNS, and load balancers. The OKD installer only provides the ignition configuration files, while the user handles the provisioning, configuration, and deployment of the cluster nodes.
 
 
-### Prerequisites Checklist
+### 2. Prerequisites Checklist
 This installation need requirement below.
 
 
@@ -115,7 +116,7 @@ If you prefer to use a community, you can use an like this:
 
 ```
 
-## Node Specification and Topology
+### 3. Node Specification and Topology
 
 For POC or development environments, each OKD 4.17 node should have at least the following specifications:
 
@@ -146,7 +147,7 @@ In production environments, the specifications should be scaled up based on the 
 
 
 
-## Step by Step Procedure Installation
+### 4. Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
 - [Network Routing](#retwork-routing)
