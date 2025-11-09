@@ -13,7 +13,8 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 ## INSTALLATION DOCUMENTATION
 - [Installation Method](#1-installation-method)
 - [Prerequisites Checklist](#2-prerequisites-checklist)
-- [Node Specification and Topology](#3-node-specification-and-topology)
+- [Node Specification](#3-node-specification)
+- [Topology](#4-topology)
 - [Step by Step Procedure Installation](4-step-by-step-procedure-installation)
 
 
@@ -116,7 +117,7 @@ If you prefer to use a community, you can use an like this:
 
 ```
 
-### 3. Node Specification and Topology
+### 3. Node Specification
 
 For POC or development environments, each OKD 4.17 node should have at least the following specifications:
 
@@ -140,10 +141,10 @@ In production environments, the specifications should be scaled up based on the 
 | 💼 **Worker Nodes**      | `10.200.106.37–39`        | CentOS Stream CoreOS 417.9.2024            | 8 cores / 8 GB / 120 GB each (sda)    | - Compute / Application Workloads |
 | 💾 **Storage Nodes**     | `10.200.106.43–45` *(example)* | CentOS Stream CoreOS 417.9.2024        | 8 cores / 16 GB / 120 GB each (sda) and 300 GB each (sdb)    | - Ceph Cluster (distributed worker, persistent volumes) |
 
-
+### 4. Topology
 <p align="center">
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762509569/20251107_1659_image_ajy0xi.png" alt="OKD Topology" width="600"><br>
-  <em>Figure 2. OKD OKD Topology</em>
+  <em>Figure 2. OKD Topology</em>
 </p>
 
 
