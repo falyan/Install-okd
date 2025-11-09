@@ -161,6 +161,16 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 | Worker 4  | worker4.midagri.gob.pe   | 10.200.106.43 | 50:6b:8d:9a:11:d4     |
 | Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
+
+🧩 Notes
+
+**Subnet:** 10.200.106.0/24
+**Gateway:** 10.200.106.1
+**Bastion Host:** Provides DNS and NTP services
+**DHCP Server:** Runs on Ubuntu (10.200.106.42)
+**Dynamic Range:** 10.200.106.50–100
+**Static IPs:** Reserved for OKD components
+**MAC Addresses:** Example only — replace with real hardware values
  
 
 2. **DNS & NTP Configuration**
