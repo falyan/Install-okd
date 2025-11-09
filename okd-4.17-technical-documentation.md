@@ -142,7 +142,7 @@ In this installation phase, we will perform the following steps to deploy and co
 1. **DHCP Setup** 
    Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
 
-   💡 Note:
+**Note:**
 The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.
 In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
 
