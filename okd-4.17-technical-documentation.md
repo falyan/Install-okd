@@ -152,10 +152,10 @@ In production environments, the specifications should be scaled up based on the 
 ### 5. Step by Step Procedure Installation
 In this installation phase, we will perform the following steps to deploy and configure the OKD 4.17 cluster environment:
 
-- [Network Routing](#network-routing)
-- [Create OKD Manifest](#create-okd-manifest)
-- [Setting http Web Server](#setting-http-web-server)
-- [Installation with Bootstraping](#installation-with-bootstraping)
+- [Network Routing](#a-network-routing)
+- [Create OKD Manifest](#b-create-okd-manifest)
+- [Setting http Web Server](#c-setting-http-web-server)
+- [Installation with Bootstraping](#d-installation-with-bootstraping)
 
 #### a. Network Routing
 
@@ -222,5 +222,5 @@ Both the DNS and NTP services are installed on the Bastion server (10.200.106.40
 1. **Bootstrap Installation**
    Initialize the control plane and start the cluster on Bootstrap server fot first installation process.
 
-2. **Master Worker & worker Node Joining**
+2. **Master & worker Node Joining**
    Join remaining nodes to complete the OKD cluster setup.
