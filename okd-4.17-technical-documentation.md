@@ -162,8 +162,7 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 | Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
 
-**🧩 Notes**
-
+**Explaination:**<br>
 **Subnet:** 10.200.106.0/24 <br>
 **Gateway:** 10.200.106.1 <br>
 **Bastion Host:** Provides DNS and NTP services <br>
@@ -173,8 +172,9 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 **MAC Addresses:** Example only — replace with real hardware values <br>
  
 
-2. **DNS & NTP Configuration**
+2. **DNS & NTP Configuration** <br>
    Set up name resolution and time synchronization for all cluster nodes.
+Both the DNS and NTP services are installed on the Bastion server (10.200.106.40) to ensure consistent hostname resolution and clock synchronization across the environment.
 
 ## Create OKD Manifest   
 
