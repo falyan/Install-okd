@@ -162,7 +162,6 @@ In this guide, the DHCP service will be installed on the HAProxy server for simp
 | Worker 5  | worker5.midagri.gob.pe   | 10.200.106.44 | 50:6b:8d:9a:11:d5     |
 | Worker 6  | worker6.midagri.gob.pe   | 10.200.106.45 | 50:6b:8d:9a:11:d6     |
 
-<br>
 **🧩 Notes**
 
 **Subnet:** 10.200.106.0/24 <br>
