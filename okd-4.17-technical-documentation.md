@@ -4,7 +4,7 @@
 
 # OKD 4.17 - Technical Documentation Package
 
-This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0).
+<!-- This document is guide step by step to install OKD version 4 specify [4.17.0-okd-scos.0.](https://github.com/okd-project/okd/releases/tag/4.17.0-okd-scos.0).
 
 
 # 📚 Table of Content
@@ -28,18 +28,7 @@ This document is guide step by step to install OKD version 4 specify [4.17.0-okd
 This installation need requirement below.
 
 
-| Component                      | Description                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------- |
-| **DNS Resolver**               | A functional DNS record for internal and external name resolution.           |
-| **Bastion Server (Jumphost)**  | Used as the main access point to deploy and manage OKD.                      |
-| **Load Balancer (HAProxy)**    | Handles API and application routing for OKD control plane.                   |
-| **NTP Server**                 | Ensures time synchronization across all cluster nodes.                       |
-| **DHCP Server**                | Provides IP address assignment and static leases for cluster nodes.          |
-| **Bootstrap Node (Temporary)** | Used during initial cluster deployment and removed afterward.                |
-| **Master Nodes (3x)**          | Control plane nodes responsible for managing the OKD cluster.                |
-| **Worker Nodes (3x)**          | Nodes where applications and workloads are deployed.                         |
-| **Storage Nodes (3x)**         | Optional nodes for hosting persistent storage ( Cluster Ceph ).     |
-| **Pull Secret**                | Required Red Hat or OKD pull secret to access and download container images. |
+
 
 
 #### a. DNS Resolver
@@ -48,22 +37,22 @@ Configure the DNS server to provide name resolution for all cluster components, 
 
 
 | Hostname and Domain                 | IP Address      | Describtion           |
-|----------------------------|-----------------|------------------------|
-| haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer |
-| api.midagri.gob.pe          | 10.200.106.42   | API endpoint eksternal |
-| api-int.midagri.gob.pe      | 10.200.106.42   | API internal cluster |
-| *.apps.midagri.gob.pe       | 10.200.106.42   | Wildcard route aplikasi |
-| bootstrap.midagri.gob.pe    | 10.200.106.41   | Node bootstrap sementara |
-| bastion.midagri.gob.pe      | 10.200.106.40   | Bastion / jumphost |
-| master1.midagri.gob.pe      | 10.200.106.34   | Control Plane node 1 |
-| master2.midagri.gob.pe      | 10.200.106.35   | Control Plane node 2 |
-| master3.midagri.gob.pe      | 10.200.106.36   | Control Plane node 3 |
-| worker1.midagri.gob.pe      | 10.200.106.37   | Worker node 1 |
-| worker2.midagri.gob.pe      | 10.200.106.38   | Worker node 2 |
-| worker3.midagri.gob.pe      | 10.200.106.39   | Worker node 3 |
-| worker4.midagri.gob.pe      | 10.200.106.43   | worker node 4 |
-| worker5.midagri.gob.pe      | 10.200.106.44   | worker node 5 |
-| worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6 |
+|----------------------------|-----------------|--------------------------------|
+| haproxy.midagri.gob.pe      | 10.200.106.42   | HAProxy / Load Balancer       |
+| api.midagri.gob.pe          | 10.200.106.42   | API endpoint eksternal        |
+| api-int.midagri.gob.pe      | 10.200.106.42   | API internal cluster          |
+| *.apps.midagri.gob.pe       | 10.200.106.42   | Wildcard route aplikasi       |
+| bootstrap.midagri.gob.pe    | 10.200.106.41   | Node bootstrap sementara      |
+| bastion.midagri.gob.pe      | 10.200.106.40   | Bastion / jumphost            |
+| master1.midagri.gob.pe      | 10.200.106.34   | Control Plane node 1          |
+| master2.midagri.gob.pe      | 10.200.106.35   | Control Plane node 2          |
+| master3.midagri.gob.pe      | 10.200.106.36   | Control Plane node 3          |
+| worker1.midagri.gob.pe      | 10.200.106.37   | Worker node 1                 |
+| worker2.midagri.gob.pe      | 10.200.106.38   | Worker node 2                 |
+| worker3.midagri.gob.pe      | 10.200.106.39   | Worker node 3                 |
+| worker4.midagri.gob.pe      | 10.200.106.43   | worker node 4                 |
+| worker5.midagri.gob.pe      | 10.200.106.44   | worker node 5                 |
+| worker6.midagri.gob.pe      | 10.200.106.45   | worker node 6                 |
 
 
 #### b. Bastion Server (Jumphost)
@@ -164,7 +153,7 @@ In this installation phase, we will perform the following steps to deploy and co
 Configure dynamic IP address allocation and network boot, DHCP Configuration will install on haproxy server. This document provides a general overview and DHCP configuration for the OKD cluster network.The setup uses a /24 subnet (10.200.106.0/24) with static IP assignments for all OKD components.
 
    **Note:**
-   The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node.In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
+   The DHCP server can be deployed as a stand-alone service, but if sufficient resources are available, it is recommended to host it on an existing infrastructure node. In this guide, the DHCP service will be installed on the HAProxy server for simplicity and efficient resource usage.
 
 <p align="center">
   <img src="https://res.cloudinary.com/dabkaenvy/image/upload/v1762676155/Screenshot_2025-11-09_at_15.15.28_xvdglg.png" alt="Network-Topology" width="400"><br>
@@ -229,4 +218,4 @@ Configure dynamic IP address allocation and network boot, DHCP Configuration wil
 ## CONFIGURATION DOCUMENTATION
 - [DHCP Configuration](#1-dhcp-configuration)
 - [DNS Configuration](#2-dns-configuration)
-- [NTP Configuration](#3-dns-configuration)
+- [NTP Configuration](#3-dns-configuration) -->
